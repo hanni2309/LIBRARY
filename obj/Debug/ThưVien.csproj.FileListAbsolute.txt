@@ -1,0 +1,16 @@
+E:\LapTrinhWindows\ThưVien\bin\Debug\ThưVien.exe.config
+E:\LapTrinhWindows\ThưVien\bin\Debug\ThưVien.exe
+E:\LapTrinhWindows\ThưVien\bin\Debug\ThưVien.pdb
+E:\LapTrinhWindows\ThưVien\obj\Debug\ThưVien.csproj.AssemblyReference.cache
+E:\LapTrinhWindows\ThưVien\obj\Debug\ThưVien.Form1.resources
+E:\LapTrinhWindows\ThưVien\obj\Debug\ThưVien.Properties.Resources.resources
+E:\LapTrinhWindows\ThưVien\obj\Debug\ThưVien.csproj.GenerateResource.cache
+E:\LapTrinhWindows\ThưVien\obj\Debug\ThưVien.csproj.CoreCompileInputs.cache
+E:\LapTrinhWindows\ThưVien\obj\Debug\ThưVien.exe
+E:\LapTrinhWindows\ThưVien\obj\Debug\ThưVien.pdb
+E:\LapTrinhWindows\ThưVien\bin\Debug\Database1.mdf
+E:\LapTrinhWindows\ThưVien\bin\Debug\Database1_log.ldf
+E:\LapTrinhWindows\ThưVien\obj\Debug\ThưVien.Login.resources
+E:\LapTrinhWindows\ThưVien\obj\Debug\ThưVien.ThuthuLog.resources
+E:\LapTrinhWindows\ThưVien\obj\Debug\ThưVien.AddBook.resources
+E:\LapTrinhWindows\ThưVien\obj\Debug\ThưVien.AddUser.resources
