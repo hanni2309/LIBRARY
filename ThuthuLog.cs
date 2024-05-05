@@ -18,7 +18,8 @@ namespace ThưVien
         }
 
 
-        private void btnUser_Click(object sender, EventArgs e)
+
+        private void button3_Click_1(object sender, EventArgs e)
         {
             AddUser user = new AddUser();
             this.Hide();
@@ -26,9 +27,25 @@ namespace ThưVien
             this.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             AddBook book = new AddBook();
+            this.Hide();
+            book.ShowDialog();
+            this.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MuonSach book = new MuonSach();
+            this.Hide();
+            book.ShowDialog();
+            this.Show();
+        }
+
+        private void btntra_Click(object sender, EventArgs e)
+        {
+            TraSach book = new TraSach();
             this.Hide();
             book.ShowDialog();
             this.Show();

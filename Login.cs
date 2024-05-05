@@ -13,8 +13,6 @@ namespace ThưVien
 {
     public partial class Login : Form
     {
-        private string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\LapTrinhWindows\ThưVien\Database1.mdf;Integrated Security=True";
-
         public Login()
         {
             InitializeComponent();
@@ -26,53 +24,34 @@ namespace ThưVien
             {
                 return;
             }
-
+            
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hanng\Downloads\ThưVien\ThưVien\Library.mdf;Integrated Security=True";
             string username = txtUsername.Text;
             string password = txbPass.Text;
 
-            string query = "SELECT phanquyen FROM Register WHERE username = @username AND pass = @password";
-
-            using (SqlConnection connection = new SqlConnection(stringConnection))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@username", username);
-                command.Parameters.AddWithValue("@password", password);
-
-                try
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM Readers WHERE Username = @Username AND Password = @Password";
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    connection.Open();
-                    string phanquyen = (string)command.ExecuteScalar();
-
-                    if (phanquyen != null)
+                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@Password", password);
+                    int result = (int)command.ExecuteScalar();
+                    if (result > 0)
                     {
-                        switch (phanquyen)
-                        {
-                            case "Admin":
-                                Admin adminForm = new Admin();
-                                adminForm.Show();
-                                break;
-                            case "Thủ thư":
-                                ThuthuLog thuthuForm = new ThuthuLog();
-                                thuthuForm.Show();
-                                break;
-                            case "Đọc giả":
-                                DocgiaLog docgiaForm = new DocgiaLog();
-                                docgiaForm.Show();
-                                break;
-                        }
+                        MessageBox.Show("Đăng nhập thành công!");
+                        // Chuyển hướng đến form DocgiaForm
+                        DocgiaLog docgiaForm = new DocgiaLog();
+                        docgiaForm.Show();
+                        this.Hide(); // Ẩn form đăng nhập
                     }
                     else
                     {
-                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Thông báo");
+                        MessageBox.Show("Tên người dùng hoặc mật khẩu không đúng!");
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex.Message);
-                }
             }
-
-            this.Hide();
         }
 
         bool KiemtraNhap()

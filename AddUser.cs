@@ -13,8 +13,7 @@ namespace ThưVien
 {
     public partial class AddUser : Form
     {
-        private string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\LapTrinhWindows\ThưVien\Database1.mdf;Integrated Security=True";
-
+        private string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hanng\Downloads\ThưVien\ThưVien\Library.mdf;Integrated Security=True";
         public AddUser()
         {
             InitializeComponent();
@@ -38,13 +37,15 @@ namespace ThưVien
 
         private void AddUser_Load(object sender, EventArgs e)
         {
+            LoadData();
+
             cboGioitinh.DataSource = new List<string>() { "Nam", "Nữ", "Khác" };
         }
 
         private void LoadData()
         {
             // Tạo câu lệnh SQL để lấy thông tin từ bảng Register
-            string query = "SELECT Id, name, cccd, username, email, gioitinh FROM Register";
+            string query = "SELECT ReaderID, Username, Password, Name, Email, DateOfBirth, Gender FROM Readers";
 
             using (SqlConnection connection = new SqlConnection(stringConnection))
             {
@@ -75,28 +76,29 @@ namespace ThưVien
             }
 
             // Lấy giá trị từ các điều khiển
+            string id = txtID.Text;
             string name = txbName.Text;
-            string cccd = txbCccd.Text;
+            string dateOfBirth = dateofbirth.Value.ToString("yyyy-MM-dd");
             string username = txbUsername.Text;
-            string pass = txbPass.Text;
+            string password = txbPass.Text;
             string email = txbEmail.Text;
-            string gioitinh = cboGioitinh.SelectedItem.ToString();
-            string phanquyen = "Đọc giả"; // Phân quyền mặc định
+            string gender = cboGioitinh.SelectedItem.ToString();
+            // Tạo câu lệnh SQL INSERT
+            string query = "INSERT INTO Readers (ReaderID, Username, Password, Name, Email, DateOfBirth, Gender) " +
+                           "VALUES (@ReaderID, @Username, @Password, @Name, @Email, @DateOfBirth, @Gender)";
 
-            // Tạo câu lệnh SQL để chèn dữ liệu vào bảng Register
-            string query = "INSERT INTO Register (name, cccd, pass, username, email, gioitinh, phanquyen) " +
-                           "VALUES (@name, @cccd, @pass, @username, @email, @gioitinh, @phanquyen)";
-
+            // Mở kết nối đến cơ sở dữ liệu và thực hiện lệnh SQL INSERT
             using (SqlConnection connection = new SqlConnection(stringConnection))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@name", name);
-                command.Parameters.AddWithValue("@cccd", cccd);
-                command.Parameters.AddWithValue("@pass", pass);
-                command.Parameters.AddWithValue("@username", username);
-                command.Parameters.AddWithValue("@email", email);
-                command.Parameters.AddWithValue("@gioitinh", gioitinh);
-                command.Parameters.AddWithValue("@phanquyen", phanquyen);
+
+                command.Parameters.AddWithValue("@ReaderID", id);
+                command.Parameters.AddWithValue("@Username", username);
+                command.Parameters.AddWithValue("@Password", password);
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Email", email);
+                command.Parameters.AddWithValue("@DateOfBirth", dateOfBirth);
+                command.Parameters.AddWithValue("@Gender", gender);
 
                 try
                 {
@@ -104,12 +106,12 @@ namespace ThưVien
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Thêm người dùng thành công");
-                        LoadData(); // Sau khi thêm thành công, load lại dữ liệu
+                        MessageBox.Show("Thêm độc giả thành công!");
+                        LoadData(); // Cập nhật dữ liệu trong DataGridView
                     }
                     else
                     {
-                        MessageBox.Show("Thêm người dùng thất bại");
+                        MessageBox.Show("Thêm độc giả thất bại!");
                     }
                 }
                 catch (Exception ex)
@@ -127,11 +129,10 @@ namespace ThưVien
                 txbName.Focus();
                 return false;
             }
-
-            if (txbCccd.Text == "")
+            if (dateofbirth.Text == "")
             {
-                MessageBox.Show("Hãy nhập số căn cước công dân hoặc chứng minh nhân dân", "Thông báo");
-                txbCccd.Focus();
+                MessageBox.Show("Hãy nhập ngày sinh", "Thông báo");
+                txbName.Focus();
                 return false;
             }
 
@@ -170,6 +171,11 @@ namespace ThưVien
         }
 
         private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void dateofbirth_ValueChanged(object sender, EventArgs e)
         {
 
         }

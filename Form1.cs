@@ -25,5 +25,34 @@ namespace ThưVien
             login.ShowDialog();
             this.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminSignIn admin = new AdminSignIn();
+            this.Hide();
+            admin.ShowDialog();
+            this.Show();
+        }
+
+        private void đọcGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
+            this.Show();
+        }
+
+        private void thủThưToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThuthuSignIn thuthu = new ThuthuSignIn();
+            this.Hide();
+            thuthu.ShowDialog();
+            this.Show();
+        }
     }
 }

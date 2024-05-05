@@ -16,5 +16,26 @@ namespace ThưVien
         {
             InitializeComponent();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ReaderMuon muon = new ReaderMuon();
+            this.Hide();
+            muon.ShowDialog();
+            this.Show();
+        }
+
+        private void btntra_Click(object sender, EventArgs e)
+        {
+            ReaderTra tra = new ReaderTra();
+            this.Hide();
+            tra.ShowDialog();
+            this.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

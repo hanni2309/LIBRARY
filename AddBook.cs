@@ -8,66 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace ThưVien
 {
     public partial class AddBook : Form
     {
-        private string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\LapTrinhWindows\ThưVien\Database1.mdf;Integrated Security=True";
+
+        private string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hanng\Downloads\ThưVien\ThưVien\Library.mdf;Integrated Security=True";
         public AddBook()
         {
             InitializeComponent();
         }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            ThuthuLog thuthu = new ThuthuLog();
-            this.Hide();
-            thuthu.ShowDialog();
-            this.Show();
-        }
         bool KiemtraNhap()
         {
-         
-            if (txbmota.Text == "")
-            {
-                MessageBox.Show("Hãy nhập phần mô tả của sách", "Thông báo");
-                txbmota.Focus();
-                return false;
-            }
 
-            if (txbName.Text == "")
+            if (txtTitle.Text == "")
             {
                 MessageBox.Show("Hãy nhập tên sách", "Thông báo");
-                txbName.Focus();
+                txtTitle.Focus();
                 return false;
             }
-
-            if (txbnxb.Text == "")
-            {
-                MessageBox.Show("Hãy nhập NXB", "Thông báo");
-                txbnxb.Focus();
-                return false;
-            }
-
-            if (txbphanloai.Text == "")
-            {
-                MessageBox.Show("Hãy nhập phân loại", "Thông báo");
-                txbphanloai.Focus();
-                return false;
-            }
-
-            if (txbsoluong.Text == "")
-            {
-                MessageBox.Show("Hãy nhập số lượng", "Thông báo");
-                txbsoluong.Focus();
-                return false;
-            }
-
-            if (txbtacgia.Text == "")
+            if (txtAuthor.Text == "")
             {
                 MessageBox.Show("Hãy nhập tên tác giả của sách", "Thông báo");
-                txbtacgia.Focus();
+                txtAuthor.Focus();
                 return false;
             }
 
@@ -77,46 +42,91 @@ namespace ThưVien
         {
 
         }
-
+    
         private void btnTao_Click(object sender, EventArgs e)
         {
-            if (!KiemtraNhap())
-            {
-                return;
-            }
+            string bookid = txbId.Text;
+            string title = txtTitle.Text;
+            string author = txtAuthor.Text;
+            string genre = txtGenre.Text;
+            int stockQuantity = int.Parse(txtStockQuantity.Text);
+
+    
+
+
+            string query = "INSERT INTO Books (BookID, Title, Author, Genre, StockQuantity) " +
+                           "VALUES (@BookID, @Title, @Author, @Genre, @StockQuantity)";
 
             using (SqlConnection connection = new SqlConnection(stringConnection))
             {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@BookID", bookid);
+                command.Parameters.AddWithValue("@Title", title);
+                command.Parameters.AddWithValue("@Author", author);
+                command.Parameters.AddWithValue("@Genre", genre);
+                command.Parameters.AddWithValue("@StockQuantity", stockQuantity);
+
                 try
                 {
                     connection.Open();
-
-                    // Tạo câu lệnh SQL để chèn dữ liệu vào bảng Book
-                    string query = @"INSERT INTO Book (Id, name, nxb, tacgia, phanloai, mota, soluong) 
-                             VALUES (@id, @name, @nxb, @tacgia, @phanloai, @mota, @soluong)";
-
-                    // Tạo đối tượng SqlCommand để thực thi câu lệnh SQL
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
                     {
-                        command.Parameters.AddWithValue("@id", txbId.Text);
-                        command.Parameters.AddWithValue("@name", txbName.Text);
-                        command.Parameters.AddWithValue("@nxb", txbnxb.Text);
-                        command.Parameters.AddWithValue("@tacgia", txbtacgia.Text);
-                        command.Parameters.AddWithValue("@phanloai", txbphanloai.Text);
-                        command.Parameters.AddWithValue("@mota", txbmota.Text);
-                        command.Parameters.AddWithValue("@soluong", int.Parse(txbsoluong.Text));
-
-                        // Thực thi câu lệnh SQL
-                        command.ExecuteNonQuery();
-
-                        MessageBox.Show("Thêm sách thành công", "Thông báo");
+                        MessageBox.Show("Thêm sách thành công!");
+                        // Xử lý các tác vụ sau khi thêm sách thành công
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm sách không thành công!");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo");
+                    MessageBox.Show("Lỗi: " + ex.Message);
                 }
             }
+            }
+        private void LoadData()
+        {
+            // Tạo câu lệnh SQL để lấy thông tin từ bảng Register
+            string query = "SELECT BookID, Title, Author, Genre, StockQuantity FROM Books";
+
+            using (SqlConnection connection = new SqlConnection(stringConnection))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    adapter.Fill(dataTable);
+
+                    // Thiết lập dữ liệu trong DataGridView
+                    dataGridView1.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
+        }
+
+        private void btnHome_Click_1(object sender, EventArgs e)
+        {
+            ThuthuLog thuthu = new ThuthuLog();
+            this.Hide();
+            thuthu.ShowDialog();
+            this.Show();
+        }
+
+        private void AddBook_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
     }

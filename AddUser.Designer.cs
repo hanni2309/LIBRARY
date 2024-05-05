@@ -30,17 +30,10 @@ namespace ThưVien
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUser));
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnUser = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.txbName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txbEmail = new System.Windows.Forms.TextBox();
-            this.txbCccd = new System.Windows.Forms.TextBox();
             this.txbUsername = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -54,94 +47,25 @@ namespace ThưVien
             this.label6 = new System.Windows.Forms.Label();
             this.cboGioitinh = new System.Windows.Forms.ComboBox();
             this.btnDangky = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.dateofbirth = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnUser = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel1.Controls.Add(this.btnUser);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.btnExit);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(192, 748);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 146);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnUser
-            // 
-            this.btnUser.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnUser.FlatAppearance.BorderSize = 0;
-            this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUser.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUser.Location = new System.Drawing.Point(3, 155);
-            this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(189, 49);
-            this.btnUser.TabIndex = 7;
-            this.btnUser.Text = "READER";
-            this.btnUser.UseVisualStyleBackColor = false;
-            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 49);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "BOOK";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(3, 265);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(189, 49);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "BORROW";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(3, 320);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(189, 49);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "EXIT";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // txbName
             // 
-            this.txbName.Location = new System.Drawing.Point(385, 241);
+            this.txbName.Location = new System.Drawing.Point(385, 277);
             this.txbName.Multiline = true;
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(262, 37);
@@ -151,11 +75,11 @@ namespace ThưVien
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(291, 249);
+            this.label1.Location = new System.Drawing.Point(297, 288);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 19);
+            this.label1.Size = new System.Drawing.Size(37, 19);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Name";
+            this.label1.Text = "Tên";
             // 
             // label2
             // 
@@ -163,29 +87,21 @@ namespace ThưVien
             this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(377, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 46);
+            this.label2.Size = new System.Drawing.Size(229, 46);
             this.label2.TabIndex = 4;
-            this.label2.Text = "REGISTER";
+            this.label2.Text = "ADD READER";
             // 
             // txbEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(385, 296);
+            this.txbEmail.Location = new System.Drawing.Point(385, 332);
             this.txbEmail.Multiline = true;
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(262, 37);
             this.txbEmail.TabIndex = 5;
             // 
-            // txbCccd
-            // 
-            this.txbCccd.Location = new System.Drawing.Point(385, 351);
-            this.txbCccd.Multiline = true;
-            this.txbCccd.Name = "txbCccd";
-            this.txbCccd.Size = new System.Drawing.Size(262, 37);
-            this.txbCccd.TabIndex = 6;
-            // 
             // txbUsername
             // 
-            this.txbUsername.Location = new System.Drawing.Point(385, 469);
+            this.txbUsername.Location = new System.Drawing.Point(385, 503);
             this.txbUsername.Multiline = true;
             this.txbUsername.Name = "txbUsername";
             this.txbUsername.Size = new System.Drawing.Size(262, 37);
@@ -206,7 +122,7 @@ namespace ThưVien
             this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.flowLayoutPanel2.Controls.Add(this.btnHome);
             this.flowLayoutPanel2.Controls.Add(this.btnAbout);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(199, 2);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(194, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1238, 71);
             this.flowLayoutPanel2.TabIndex = 9;
@@ -242,7 +158,7 @@ namespace ThưVien
             // 
             // txbPass
             // 
-            this.txbPass.Location = new System.Drawing.Point(385, 528);
+            this.txbPass.Location = new System.Drawing.Point(385, 564);
             this.txbPass.Multiline = true;
             this.txbPass.Name = "txbPass";
             this.txbPass.Size = new System.Drawing.Size(262, 37);
@@ -252,7 +168,7 @@ namespace ThưVien
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(291, 304);
+            this.label.Location = new System.Drawing.Point(291, 340);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(50, 19);
             this.label.TabIndex = 11;
@@ -262,27 +178,27 @@ namespace ThưVien
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(268, 360);
+            this.label3.Location = new System.Drawing.Point(273, 396);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 19);
+            this.label3.Size = new System.Drawing.Size(85, 19);
             this.label3.TabIndex = 12;
-            this.label3.Text = "CCCD/CMND";
+            this.label3.Text = "Ngày sinh";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(286, 417);
+            this.label4.Location = new System.Drawing.Point(283, 453);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 19);
+            this.label4.Size = new System.Drawing.Size(72, 19);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Gender";
+            this.label4.Text = "Giới tính";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(282, 536);
+            this.label5.Location = new System.Drawing.Point(281, 571);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 19);
             this.label5.TabIndex = 14;
@@ -292,7 +208,7 @@ namespace ThưVien
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(281, 478);
+            this.label6.Location = new System.Drawing.Point(279, 512);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 19);
             this.label6.TabIndex = 15;
@@ -301,7 +217,7 @@ namespace ThưVien
             // cboGioitinh
             // 
             this.cboGioitinh.FormattingEnabled = true;
-            this.cboGioitinh.Location = new System.Drawing.Point(385, 416);
+            this.cboGioitinh.Location = new System.Drawing.Point(385, 452);
             this.cboGioitinh.Name = "cboGioitinh";
             this.cboGioitinh.Size = new System.Drawing.Size(121, 24);
             this.cboGioitinh.TabIndex = 18;
@@ -309,7 +225,7 @@ namespace ThưVien
             // btnDangky
             // 
             this.btnDangky.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangky.Location = new System.Drawing.Point(398, 620);
+            this.btnDangky.Location = new System.Drawing.Point(398, 656);
             this.btnDangky.Name = "btnDangky";
             this.btnDangky.Size = new System.Drawing.Size(149, 44);
             this.btnDangky.TabIndex = 19;
@@ -317,11 +233,133 @@ namespace ThưVien
             this.btnDangky.UseVisualStyleBackColor = true;
             this.btnDangky.Click += new System.EventHandler(this.btnDangky_Click);
             // 
+            // dateofbirth
+            // 
+            this.dateofbirth.Location = new System.Drawing.Point(386, 396);
+            this.dateofbirth.Name = "dateofbirth";
+            this.dateofbirth.Size = new System.Drawing.Size(200, 22);
+            this.dateofbirth.TabIndex = 20;
+            this.dateofbirth.ValueChanged += new System.EventHandler(this.dateofbirth_ValueChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(297, 227);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(26, 19);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "ID";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(385, 215);
+            this.txtID.Multiline = true;
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(262, 37);
+            this.txtID.TabIndex = 22;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(3, 375);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(189, 49);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "EXIT";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(3, 265);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(189, 49);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "MƯỢN";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(3, 210);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(189, 49);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "SÁCH";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnUser
+            // 
+            this.btnUser.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnUser.FlatAppearance.BorderSize = 0;
+            this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUser.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUser.Location = new System.Drawing.Point(3, 155);
+            this.btnUser.Name = "btnUser";
+            this.btnUser.Size = new System.Drawing.Size(189, 49);
+            this.btnUser.TabIndex = 7;
+            this.btnUser.Text = "ĐỌC GIẢ";
+            this.btnUser.UseVisualStyleBackColor = false;
+            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(189, 146);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel1.Controls.Add(this.btnUser);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button7);
+            this.flowLayoutPanel1.Controls.Add(this.btnExit);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 2);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(192, 748);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(3, 320);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(189, 49);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "TRẢ";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1449, 753);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dateofbirth);
             this.Controls.Add(this.btnDangky);
             this.Controls.Add(this.cboGioitinh);
             this.Controls.Add(this.label6);
@@ -333,7 +371,6 @@ namespace ThưVien
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txbUsername);
-            this.Controls.Add(this.txbCccd);
             this.Controls.Add(this.txbEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -342,33 +379,25 @@ namespace ThưVien
             this.Name = "AddUser";
             this.Text = "AddUser";
             this.Load += new System.EventHandler(this.AddUser_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbEmail;
-        private System.Windows.Forms.TextBox txbCccd;
         private System.Windows.Forms.TextBox txbUsername;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TextBox txbPass;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnUser;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -377,5 +406,15 @@ namespace ThưVien
         private System.Windows.Forms.ComboBox cboGioitinh;
         private System.Windows.Forms.Button btnDangky;
         private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.DateTimePicker dateofbirth;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUser;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button button7;
     }
 }
